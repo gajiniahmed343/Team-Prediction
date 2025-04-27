@@ -1,100 +1,15 @@
-2025-04-27T17:12:34.123626+00:00 heroku[web.1]: Starting process with command `java -Dserver.port=41056 $JAVA_OPTS -jar target/taskmanagermvc-0.0.1-SNAPSHOT.jar`
-2025-04-27T17:12:34.978000+00:00 app[web.1]: Create a Procfile to customize the command used to run this process: https://devcenter.heroku.com/articles/procfile
-2025-04-27T17:12:35.005438+00:00 app[web.1]: Setting JAVA_TOOL_OPTIONS defaults based on dyno size. Custom settings will override them.
-2025-04-27T17:12:35.008870+00:00 app[web.1]: Picked up JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF-8 -XX:MaxRAM=536870912 -Xmx300m -Xss512k -XX:CICompilerCount=2
-2025-04-27T17:12:36.000000+00:00 app[api]: Build succeeded
-2025-04-27T17:12:36.278005+00:00 app[web.1]:
-2025-04-27T17:12:36.278019+00:00 app[web.1]: .   ____          _            __ _ _
-2025-04-27T17:12:36.278019+00:00 app[web.1]: /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-2025-04-27T17:12:36.278019+00:00 app[web.1]: ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
-2025-04-27T17:12:36.278020+00:00 app[web.1]: \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-2025-04-27T17:12:36.278020+00:00 app[web.1]: '  |____| .__|_| |_|_| |_\__, | / / / /
-2025-04-27T17:12:36.278020+00:00 app[web.1]: =========|_|==============|___/=/_/_/_/
-2025-04-27T17:12:36.278020+00:00 app[web.1]:
-2025-04-27T17:12:36.281970+00:00 app[web.1]: :: Spring Boot ::                (v3.4.5)
-2025-04-27T17:12:36.281971+00:00 app[web.1]:
-2025-04-27T17:12:36.516953+00:00 app[web.1]: 2025-04-27T17:12:36.514Z  INFO 2 --- [           main] c.i.t.TaskmanagermvcApplication          : Starting TaskmanagermvcApplication v0.0.1-SNAPSHOT using Java 21.0.7 with PID 2 (/app/target/taskmanagermvc-0.0.1-SNAPSHOT.jar started by u48885 in /app)
-2025-04-27T17:12:36.519601+00:00 app[web.1]: 2025-04-27T17:12:36.519Z  INFO 2 --- [           main] c.i.t.TaskmanagermvcApplication          : No active profile set, falling back to 1 default profile: "default"
-2025-04-27T17:12:37.775881+00:00 app[web.1]: 2025-04-27T17:12:37.775Z  INFO 2 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-27T17:12:37.848630+00:00 app[web.1]: 2025-04-27T17:12:37.848Z  INFO 2 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63 ms. Found 1 JPA repository interface.
-2025-04-27T17:12:38.491890+00:00 app[web.1]: 2025-04-27T17:12:38.491Z  INFO 2 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 41056 (http)
-2025-04-27T17:12:38.511165+00:00 app[web.1]: 2025-04-27T17:12:38.510Z  INFO 2 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-04-27T17:12:38.511551+00:00 app[web.1]: 2025-04-27T17:12:38.511Z  INFO 2 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
-2025-04-27T17:12:38.563684+00:00 app[web.1]: 2025-04-27T17:12:38.563Z  INFO 2 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-04-27T17:12:38.570826+00:00 app[web.1]: 2025-04-27T17:12:38.570Z  INFO 2 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1932 ms
-2025-04-27T17:12:38.669626+00:00 app[web.1]: 2025-04-27T17:12:38.669Z  WARN 2 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource': Could not bind properties to 'HikariDataSource' : prefix=spring.datasource.hikari, ignoreInvalidFields=false, ignoreUnknownFields=true
-2025-04-27T17:12:38.672639+00:00 app[web.1]: 2025-04-27T17:12:38.672Z  INFO 2 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2025-04-27T17:12:38.688151+00:00 app[web.1]: 2025-04-27T17:12:38.686Z  INFO 2 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger :
-2025-04-27T17:12:38.688153+00:00 app[web.1]:
-2025-04-27T17:12:38.688153+00:00 app[web.1]: Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2025-04-27T17:12:38.721718+00:00 app[web.1]: 2025-04-27T17:12:38.721Z ERROR 2 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   :
-2025-04-27T17:12:38.721720+00:00 app[web.1]:
-2025-04-27T17:12:38.721720+00:00 app[web.1]: ***************************
-2025-04-27T17:12:38.721720+00:00 app[web.1]: APPLICATION FAILED TO START
-2025-04-27T17:12:38.721721+00:00 app[web.1]: ***************************
-2025-04-27T17:12:38.721721+00:00 app[web.1]:
-2025-04-27T17:12:38.721721+00:00 app[web.1]: Description:
-2025-04-27T17:12:38.721721+00:00 app[web.1]:
-2025-04-27T17:12:38.721722+00:00 app[web.1]: Failed to bind properties under 'spring.datasource.hikari.maximum-pool-size' to int:
-2025-04-27T17:12:38.721722+00:00 app[web.1]:
-2025-04-27T17:12:38.721722+00:00 app[web.1]: Property: spring.datasource.hikari.maximum-pool-size
-2025-04-27T17:12:38.721722+00:00 app[web.1]: Value: "10  # Connection pool size, you can adjust it"
-2025-04-27T17:12:38.721723+00:00 app[web.1]: Origin: class path resource [application.properties] from taskmanagermvc-0.0.1-SNAPSHOT.jar - 13:44
-2025-04-27T17:12:38.721723+00:00 app[web.1]: Reason: failed to convert java.lang.String to int (caused by java.lang.NumberFormatException: For input string: "10#Connectionpoolsize,youcanadjustit")
-2025-04-27T17:12:38.721723+00:00 app[web.1]:
-2025-04-27T17:12:38.721723+00:00 app[web.1]: Action:
-2025-04-27T17:12:38.721724+00:00 app[web.1]:
-2025-04-27T17:12:38.721724+00:00 app[web.1]: Update your application's configuration
-2025-04-27T17:12:38.721724+00:00 app[web.1]:
-2025-04-27T17:12:38.812995+00:00 heroku[web.1]: Process exited with status 1
-2025-04-27T17:12:38.840484+00:00 heroku[web.1]: State changed from starting to crashed
-2025-04-27T17:12:38.843369+00:00 heroku[web.1]: State changed from crashed to starting
-2025-04-27T17:12:42.314566+00:00 heroku[web.1]: Starting process with command `java -Dserver.port=22738 $JAVA_OPTS -jar target/taskmanagermvc-0.0.1-SNAPSHOT.jar`
-2025-04-27T17:12:42.856348+00:00 app[web.1]: Create a Procfile to customize the command used to run this process: https://devcenter.heroku.com/articles/procfile
-2025-04-27T17:12:42.863372+00:00 app[web.1]: Setting JAVA_TOOL_OPTIONS defaults based on dyno size. Custom settings will override them.
-2025-04-27T17:12:42.866027+00:00 app[web.1]: Picked up JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF-8 -XX:MaxRAM=536870912 -Xmx300m -Xss512k -XX:CICompilerCount=2
-2025-04-27T17:12:43.642860+00:00 app[web.1]:
-2025-04-27T17:12:43.642877+00:00 app[web.1]: .   ____          _            __ _ _
-2025-04-27T17:12:43.642877+00:00 app[web.1]: /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-2025-04-27T17:12:43.642878+00:00 app[web.1]: ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
-2025-04-27T17:12:43.642878+00:00 app[web.1]: \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-2025-04-27T17:12:43.642878+00:00 app[web.1]: '  |____| .__|_| |_|_| |_\__, | / / / /
-2025-04-27T17:12:43.642879+00:00 app[web.1]: =========|_|==============|___/=/_/_/_/
-2025-04-27T17:12:43.642879+00:00 app[web.1]:
-2025-04-27T17:12:43.646017+00:00 app[web.1]: :: Spring Boot ::                (v3.4.5)
-2025-04-27T17:12:43.646022+00:00 app[web.1]:
-2025-04-27T17:12:43.728038+00:00 app[web.1]: 2025-04-27T17:12:43.726Z  INFO 2 --- [           main] c.i.t.TaskmanagermvcApplication          : Starting TaskmanagermvcApplication v0.0.1-SNAPSHOT using Java 21.0.7 with PID 2 (/app/target/taskmanagermvc-0.0.1-SNAPSHOT.jar started by u47618 in /app)
-2025-04-27T17:12:43.728701+00:00 app[web.1]: 2025-04-27T17:12:43.728Z  INFO 2 --- [           main] c.i.t.TaskmanagermvcApplication          : No active profile set, falling back to 1 default profile: "default"
-2025-04-27T17:12:44.409445+00:00 app[web.1]: 2025-04-27T17:12:44.409Z  INFO 2 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-27T17:12:44.459801+00:00 app[web.1]: 2025-04-27T17:12:44.459Z  INFO 2 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 1 JPA repository interface.
-2025-04-27T17:12:44.854369+00:00 app[web.1]: 2025-04-27T17:12:44.854Z  INFO 2 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 22738 (http)
-2025-04-27T17:12:44.867780+00:00 app[web.1]: 2025-04-27T17:12:44.867Z  INFO 2 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-04-27T17:12:44.867928+00:00 app[web.1]: 2025-04-27T17:12:44.867Z  INFO 2 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
-2025-04-27T17:12:44.891866+00:00 app[web.1]: 2025-04-27T17:12:44.891Z  INFO 2 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-04-27T17:12:44.892709+00:00 app[web.1]: 2025-04-27T17:12:44.892Z  INFO 2 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1118 ms
-2025-04-27T17:12:44.969632+00:00 app[web.1]: 2025-04-27T17:12:44.969Z  WARN 2 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource': Could not bind properties to 'HikariDataSource' : prefix=spring.datasource.hikari, ignoreInvalidFields=false, ignoreUnknownFields=true
-2025-04-27T17:12:44.972461+00:00 app[web.1]: 2025-04-27T17:12:44.972Z  INFO 2 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2025-04-27T17:12:44.986418+00:00 app[web.1]: 2025-04-27T17:12:44.986Z  INFO 2 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger :
-2025-04-27T17:12:44.986419+00:00 app[web.1]:
-2025-04-27T17:12:44.986420+00:00 app[web.1]: Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2025-04-27T17:12:45.012712+00:00 app[web.1]: 2025-04-27T17:12:45.012Z ERROR 2 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   :
-2025-04-27T17:12:45.012713+00:00 app[web.1]:
-2025-04-27T17:12:45.012714+00:00 app[web.1]: ***************************
-2025-04-27T17:12:45.012714+00:00 app[web.1]: APPLICATION FAILED TO START
-2025-04-27T17:12:45.012715+00:00 app[web.1]: ***************************
-2025-04-27T17:12:45.012715+00:00 app[web.1]:
-2025-04-27T17:12:45.012716+00:00 app[web.1]: Description:
-2025-04-27T17:12:45.012716+00:00 app[web.1]:
-2025-04-27T17:12:45.012717+00:00 app[web.1]: Failed to bind properties under 'spring.datasource.hikari.maximum-pool-size' to int:
-2025-04-27T17:12:45.012717+00:00 app[web.1]:
-2025-04-27T17:12:45.012718+00:00 app[web.1]: Property: spring.datasource.hikari.maximum-pool-size
-2025-04-27T17:12:45.012718+00:00 app[web.1]: Value: "10  # Connection pool size, you can adjust it"
-2025-04-27T17:12:45.012719+00:00 app[web.1]: Origin: class path resource [application.properties] from taskmanagermvc-0.0.1-SNAPSHOT.jar - 13:44
-2025-04-27T17:12:45.012727+00:00 app[web.1]: Reason: failed to convert java.lang.String to int (caused by java.lang.NumberFormatException: For input string: "10#Connectionpoolsize,youcanadjustit")
-2025-04-27T17:12:45.012727+00:00 app[web.1]:
-2025-04-27T17:12:45.012727+00:00 app[web.1]: Action:
-2025-04-27T17:12:45.012727+00:00 app[web.1]:
-2025-04-27T17:12:45.012728+00:00 app[web.1]: Update your application's configuration
-2025-04-27T17:12:45.012728+00:00 app[web.1]:
-2025-04-27T17:12:45.088936+00:00 heroku[web.1]: Process exited with status 1
-2025-04-27T17:12:45.108518+00:00 heroku[web.1]: State changed from starting to crashed
+# Database Configuration for JawsDB MySQL (Heroku)
+spring.datasource.url=${JAWSDB_URL}  # This variable is automatically set by Heroku
+spring.datasource.driverClassName=com.mysql.cj.jdbc.Driver
+spring.datasource.username=${JAWSDB_USERNAME}  # Username from Heroku's JawsDB Add-on
+spring.datasource.password=${JAWSDB_PASSWORD}  # Password from Heroku's JawsDB Add-on
+
+# Hibernate JPA Configuration
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
+
+# MySQL Connection Pooling Configuration
+spring.datasource.hikari.maximum-pool-size=10
+
+server.port=${PORT:8080}
