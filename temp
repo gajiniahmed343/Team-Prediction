@@ -1,0 +1,16 @@
+# Database Configuration for MySQL (Heroku)
+spring.datasource.url=${CLEARDB_DATABASE_URL}  # Heroku provides this URL
+spring.datasource.driverClassName=com.mysql.cj.jdbc.Driver
+spring.datasource.username=${CLEARDB_DATABASE_USERNAME}  # Username from Heroku's MySQL Add-on
+spring.datasource.password=${CLEARDB_DATABASE_PASSWORD}  # Password from Heroku's MySQL Add-on
+
+# Hibernate JPA Configuration
+spring.jpa.hibernate.ddl-auto=update  # Automatically updates your schema
+spring.jpa.show-sql=true  # Show SQL queries in the console
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect  # MySQL dialect
+
+# MySQL Connection Pooling Configuration
+spring.datasource.hikari.maximum-pool-size=10  # Connection pool size, you can adjust it
+
+# Enable MySQL console (optional, remove in production)
+spring.h2.console.enabled=false  # Disable H2 console for production
