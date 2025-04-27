@@ -1,2 +1,88 @@
+ Warning: heroku update available from 10.0.0 to 10.6.1.
+2025-04-27T11:21:54.145016+00:00 heroku[web.1]: State changed from starting to crashed
+2025-04-27T11:21:54.148076+00:00 heroku[web.1]: State changed from crashed to starting
+2025-04-27T11:21:57.734567+00:00 heroku[web.1]: Starting process with command `java -Dserver.port=11565 $JAVA_OPTS -jar target/taskmanagermvc-0.0.1-SNAPSHOT.jar`
+2025-04-27T11:21:58.275312+00:00 app[web.1]: Create a Procfile to customize the command used to run this process: https://devcenter.heroku.com/articles/procfile
+2025-04-27T11:21:58.286859+00:00 app[web.1]: Setting JAVA_TOOL_OPTIONS defaults based on dyno size. Custom settings will override them.
+2025-04-27T11:21:58.290224+00:00 app[web.1]: Picked up JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF-8 -XX:MaxRAM=536870912 -Xmx300m -Xss512k -XX:CICompilerCount=2
+2025-04-27T11:21:59.189243+00:00 app[web.1]:
+2025-04-27T11:21:59.189275+00:00 app[web.1]: .   ____          _            __ _ _
+2025-04-27T11:21:59.189275+00:00 app[web.1]: /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+2025-04-27T11:21:59.189275+00:00 app[web.1]: ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+2025-04-27T11:21:59.189276+00:00 app[web.1]: \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+2025-04-27T11:21:59.189276+00:00 app[web.1]: '  |____| .__|_| |_|_| |_\__, | / / / /
+2025-04-27T11:21:59.189276+00:00 app[web.1]: =========|_|==============|___/=/_/_/_/
+2025-04-27T11:21:59.189276+00:00 app[web.1]:
+2025-04-27T11:21:59.193046+00:00 app[web.1]: :: Spring Boot ::                (v3.4.5)
+2025-04-27T11:21:59.193055+00:00 app[web.1]:
+2025-04-27T11:21:59.276658+00:00 app[web.1]: 2025-04-27T11:21:59.275Z  INFO 2 --- [           main] c.i.t.TaskmanagermvcApplication          : Starting TaskmanagermvcApplication v0.0.1-SNAPSHOT using Java 21.0.7 with PID 2 (/app/target/taskmanagermvc-0.0.1-SNAPSHOT.jar started by u47531 in /app)
+2025-04-27T11:21:59.277450+00:00 app[web.1]: 2025-04-27T11:21:59.277Z  INFO 2 --- [           main] c.i.t.TaskmanagermvcApplication          : No active profile set, falling back to 1 default profile: "default"
+2025-04-27T11:21:59.994029+00:00 app[web.1]: 2025-04-27T11:21:59.993Z  INFO 2 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-27T11:22:00.044668+00:00 app[web.1]: 2025-04-27T11:22:00.044Z  INFO 2 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 1 JPA repository interface.
+2025-04-27T11:22:00.446613+00:00 app[web.1]: 2025-04-27T11:22:00.446Z  INFO 2 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 11565 (http)
+2025-04-27T11:22:00.460351+00:00 app[web.1]: 2025-04-27T11:22:00.460Z  INFO 2 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-27T11:22:00.460529+00:00 app[web.1]: 2025-04-27T11:22:00.460Z  INFO 2 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-04-27T11:22:00.487185+00:00 app[web.1]: 2025-04-27T11:22:00.486Z  INFO 2 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-27T11:22:00.488088+00:00 app[web.1]: 2025-04-27T11:22:00.487Z  INFO 2 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1160 ms
+2025-04-27T11:22:00.565220+00:00 app[web.1]: 2025-04-27T11:22:00.565Z  WARN 2 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Cannot load driver class: com.mysql.cj.jdbc.Driver
+2025-04-27T11:22:00.567941+00:00 app[web.1]: 2025-04-27T11:22:00.567Z  INFO 2 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-04-27T11:22:00.582903+00:00 app[web.1]: 2025-04-27T11:22:00.582Z  INFO 2 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger :
+2025-04-27T11:22:00.582904+00:00 app[web.1]:
+2025-04-27T11:22:00.582904+00:00 app[web.1]: Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-04-27T11:22:00.608960+00:00 app[web.1]: 2025-04-27T11:22:00.604Z ERROR 2 --- [           main] o.s.boot.SpringApplication               : Application run failed
+2025-04-27T11:22:00.608961+00:00 app[web.1]:
+2025-04-27T11:22:00.608962+00:00 app[web.1]: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Cannot load driver class: com.mysql.cj.jdbc.Driver
+2025-04-27T11:22:00.608975+00:00 app[web.1]: at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:328) ~[spring-beans-6.2.6.jar!/:6.2.6]
+2025-04-27T11:22:00.608976+00:00 app[web.1]: at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.6.jar!/:6.2.6]
+2025-04-27T11:22:00.608976+00:00 app[web.1]: at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.6.jar!/:6.2.6]
+2025-04-27T11:22:00.608977+00:00 app[web.1]: at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.6.jar!/:6.2.6]
+2025-04-27T11:22:00.608977+00:00 app[web.1]: at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.5.jar!/:3.4.5]
+2025-04-27T11:22:00.608987+00:00 app[web.1]: at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753) ~[spring-boot-3.4.5.jar!/:3.4.5]
+2025-04-27T11:22:00.608987+00:00 app[web.1]: at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.5.jar!/:3.4.5]
+2025-04-27T11:22:00.608988+00:00 app[web.1]: at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.5.jar!/:3.4.5]
+2025-04-27T11:22:00.608988+00:00 app[web.1]: at org.springframework.boot.SpringApplication.run(SpringApplication.java:1362) ~[spring-boot-3.4.5.jar!/:3.4.5]
+2025-04-27T11:22:00.608988+00:00 app[web.1]: at org.springframework.boot.SpringApplication.run(SpringApplication.java:1351) ~[spring-boot-3.4.5.jar!/:3.4.5]
+2025-04-27T11:22:00.608989+00:00 app[web.1]: at com.infosys.taskmanagermvc.TaskmanagermvcApplication.main(TaskmanagermvcApplication.java:10) ~[!/:0.0.1-SNAPSHOT]
+2025-04-27T11:22:00.608989+00:00 app[web.1]: at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+2025-04-27T11:22:00.608991+00:00 app[web.1]: at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+2025-04-27T11:22:00.608991+00:00 app[web.1]: at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:102) ~[taskmanagermvc-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+2025-04-27T11:22:00.608991+00:00 app[web.1]: at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64) ~[taskmanagermvc-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+2025-04-27T11:22:00.608992+00:00 app[web.1]: at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40) ~[taskmanagermvc-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+2025-04-27T11:22:00.608993+00:00 app[web.1]: Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Cannot load driver class: com.mysql.cj.jdbc.Driver
+2025-04-27T11:22:00.608994+00:00 app[web.1]: at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-6.2.6.jar!/:6.2.6]
+2025-04-27T11:22:00.608998+00:00 app[web.1]: at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546) ~[spring-beans-6.2.6.jar!/:6.2.6]
+2025-04-27T11:22:00.608998+00:00 app[web.1]: at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1367) ~[spring-beans-6.2.6.jar!/:6.2.6]
+2025-04-27T11:22:00.608999+00:00 app[web.1]: at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1197) ~[spring-beans-6.2.6.jar!/:6.2.6]
+2025-04-27T11:22:00.608999+00:00 app[web.1]: at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.6.jar!/:6.2.6]
+2025-04-27T11:22:00.609000+00:00 app[web.1]: at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.6.jar!/:6.2.6]
+2025-04-27T11:22:00.609000+00:00 app[web.1]: at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.6.jar!/:6.2.6]
+2025-04-27T11:22:00.609000+00:00 app[web.1]: at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-6.2.6.jar!/:6.2.6]
+2025-04-27T11:22:00.609001+00:00 app[web.1]: at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.6.jar!/:6.2.6]
+2025-04-27T11:22:00.609001+00:00 app[web.1]: at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.6.jar!/:6.2.6]
+2025-04-27T11:22:00.609002+00:00 app[web.1]: at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-6.2.6.jar!/:6.2.6]
+2025-04-27T11:22:00.609002+00:00 app[web.1]: ... 15 common frames omitted
+2025-04-27T11:22:00.609003+00:00 app[web.1]: Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Cannot load driver class: com.mysql.cj.jdbc.Driver
+2025-04-27T11:22:00.609004+00:00 app[web.1]: at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657) ~[spring-beans-6.2.6.jar!/:6.2.6]
+2025-04-27T11:22:00.609004+00:00 app[web.1]: at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645) ~[spring-beans-6.2.6.jar!/:6.2.6]
+2025-04-27T11:22:00.609004+00:00 app[web.1]: at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1367) ~[spring-beans-6.2.6.jar!/:6.2.6]
+2025-04-27T11:22:00.609005+00:00 app[web.1]: at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1197) ~[spring-beans-6.2.6.jar!/:6.2.6]
+2025-04-27T11:22:00.609005+00:00 app[web.1]: at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.6.jar!/:6.2.6]
+2025-04-27T11:22:00.609005+00:00 app[web.1]: at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.6.jar!/:6.2.6]
+2025-04-27T11:22:00.609005+00:00 app[web.1]: at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.6.jar!/:6.2.6]
+2025-04-27T11:22:00.609006+00:00 app[web.1]: at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-6.2.6.jar!/:6.2.6]
+2025-04-27T11:22:00.609006+00:00 app[web.1]: at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.6.jar!/:6.2.6]
+2025-04-27T11:22:00.609006+00:00 app[web.1]: at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.6.jar!/:6.2.6]
+2025-04-27T11:22:00.609006+00:00 app[web.1]: at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1681) ~[spring-beans-6.2.6.jar!/:6.2.6]
+2025-04-27T11:22:00.609006+00:00 app[web.1]: at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1627) ~[spring-beans-6.2.6.jar!/:6.2.6]
+2025-04-27T11:22:00.609010+00:00 app[web.1]: at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.6.jar!/:6.2.6]
+2025-04-27T11:22:00.609010+00:00 app[web.1]: at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.6.jar!/:6.2.6]
+2025-04-27T11:22:00.609016+00:00 app[web.1]: at org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari.dataSource(DataSourceConfiguration.java:127) ~[spring-boot-autoconfigure-3.4.5.jar!/:3.4.5]
+2025-04-27T11:22:00.609016+00:00 app[web.1]: at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+2025-04-27T11:22:00.609017+00:00 app[web.1]: at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+2025-04-27T11:22:00.609017+00:00 app[web.1]: at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:171) ~[spring-beans-6.2.6.jar!/:6.2.6]
+2025-04-27T11:22:00.609017+00:00 app[web.1]: ... 41 common frames omitted
+2025-04-27T11:22:00.609017+00:00 app[web.1]:
+2025-04-27T11:22:00.667926+00:00 heroku[web.1]: Process exited with status 1
+2025-04-27T11:22:00.695391+00:00 heroku[web.1]: State changed from starting to crashed
 2025-04-27T11:26:51.593468+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=taskmanagermvc-3260deeb347b.herokuapp.com request_id=db209b4a-e556-4853-9f00-900e9ef38a2c fwd="103.168.80.95" dyno= connect= service= status=503 bytes= protocol=https
 2025-04-27T11:26:52.311082+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=taskmanagermvc-3260deeb347b.herokuapp.com request_id=1e0f9058-54d4-4187-8c17-b1da10b6c6b7 fwd="103.168.80.95" dyno= connect= service= status=503 bytes= protocol=https
