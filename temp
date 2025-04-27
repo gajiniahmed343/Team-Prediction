@@ -1,13 +1,2 @@
-# Database Configuration for JawsDB MySQL (Heroku)
-spring.datasource.url=${JAWSDB_URL}  # This variable is automatically set by Heroku
-spring.datasource.driverClassName=com.mysql.cj.jdbc.Driver
-spring.datasource.username=${JAWSDB_USERNAME}  # Username from Heroku's JawsDB Add-on
-spring.datasource.password=${JAWSDB_PASSWORD}  # Password from Heroku's JawsDB Add-on
-
-# Hibernate JPA Configuration
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
-spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
-
-# MySQL Connection Pooling Configuration
-spring.datasource.hikari.maximum-pool-size=10  # Connection pool size, you can adjust it
+2025-04-27T11:26:51.593468+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=taskmanagermvc-3260deeb347b.herokuapp.com request_id=db209b4a-e556-4853-9f00-900e9ef38a2c fwd="103.168.80.95" dyno= connect= service= status=503 bytes= protocol=https
+2025-04-27T11:26:52.311082+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=taskmanagermvc-3260deeb347b.herokuapp.com request_id=1e0f9058-54d4-4187-8c17-b1da10b6c6b7 fwd="103.168.80.95" dyno= connect= service= status=503 bytes= protocol=https
