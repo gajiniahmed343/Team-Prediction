@@ -1,1 +1,101 @@
-spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
+2025-04-27T17:23:45.349725+00:00 app[web.1]: at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:88) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+2025-04-27T17:23:45.349726+00:00 app[web.1]: at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentWithDefaults(JdbcEnvironmentInitiator.java:181) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+2025-04-27T17:23:45.349726+00:00 app[web.1]: at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:392) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+2025-04-27T17:23:45.349726+00:00 app[web.1]: at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+2025-04-27T17:23:45.349728+00:00 app[web.1]: at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+2025-04-27T17:23:45.349728+00:00 app[web.1]: at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+2025-04-27T17:23:45.349728+00:00 app[web.1]: at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+2025-04-27T17:23:45.349728+00:00 app[web.1]: ... 35 common frames omitted
+2025-04-27T17:23:45.349729+00:00 app[web.1]: Caused by: org.hibernate.boot.registry.classloading.spi.ClassLoadingException: Unable to load class [org.hibernate.dialect.MySQL5InnoDBDialect]
+2025-04-27T17:23:45.349729+00:00 app[web.1]: at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.classForName(ClassLoaderServiceImpl.java:126) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+2025-04-27T17:23:45.349729+00:00 app[web.1]: at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.selectStrategyImplementor(StrategySelectorImpl.java:150) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+2025-04-27T17:23:45.349729+00:00 app[web.1]: ... 45 common frames omitted
+2025-04-27T17:23:45.349729+00:00 app[web.1]: Caused by: java.lang.ClassNotFoundException: Could not load requested class : org.hibernate.dialect.MySQL5InnoDBDialect
+2025-04-27T17:23:45.349729+00:00 app[web.1]: at org.hibernate.boot.registry.classloading.internal.AggregatedClassLoader.findClass(AggregatedClassLoader.java:216) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+2025-04-27T17:23:45.349729+00:00 app[web.1]: at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:593) ~[na:na]
+2025-04-27T17:23:45.349729+00:00 app[web.1]: at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[na:na]
+2025-04-27T17:23:45.349730+00:00 app[web.1]: at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+2025-04-27T17:23:45.349730+00:00 app[web.1]: at java.base/java.lang.Class.forName(Class.java:534) ~[na:na]
+2025-04-27T17:23:45.349730+00:00 app[web.1]: at java.base/java.lang.Class.forName(Class.java:513) ~[na:na]
+2025-04-27T17:23:45.349730+00:00 app[web.1]: at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.classForName(ClassLoaderServiceImpl.java:123) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+2025-04-27T17:23:45.349730+00:00 app[web.1]: ... 46 common frames omitted
+2025-04-27T17:23:45.349731+00:00 app[web.1]: Caused by: java.lang.Throwable: null
+2025-04-27T17:23:45.349731+00:00 app[web.1]: at org.hibernate.boot.registry.classloading.internal.AggregatedClassLoader.findClass(AggregatedClassLoader.java:209) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+2025-04-27T17:23:45.349731+00:00 app[web.1]: ... 52 common frames omitted
+2025-04-27T17:23:45.349731+00:00 app[web.1]: Suppressed: java.lang.ClassNotFoundException: org.hibernate.dialect.MySQL5InnoDBDialect
+2025-04-27T17:23:45.349732+00:00 app[web.1]: at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445) ~[na:na]
+2025-04-27T17:23:45.349732+00:00 app[web.1]: at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:593) ~[na:na]
+2025-04-27T17:23:45.349732+00:00 app[web.1]: at org.springframework.boot.loader.net.protocol.jar.JarUrlClassLoader.loadClass(JarUrlClassLoader.java:107) ~[taskmanagermvc-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+2025-04-27T17:23:45.349732+00:00 app[web.1]: at org.springframework.boot.loader.launch.LaunchedClassLoader.loadClass(LaunchedClassLoader.java:91) ~[taskmanagermvc-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+2025-04-27T17:23:45.349732+00:00 app[web.1]: at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[na:na]
+2025-04-27T17:23:45.349733+00:00 app[web.1]: at org.hibernate.boot.registry.classloading.internal.AggregatedClassLoader.findClass(AggregatedClassLoader.java:206) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+2025-04-27T17:23:45.349733+00:00 app[web.1]: ... 52 common frames omitted
+2025-04-27T17:23:45.349733+00:00 app[web.1]: Suppressed: java.lang.ClassNotFoundException: org.hibernate.dialect.MySQL5InnoDBDialect
+2025-04-27T17:23:45.349733+00:00 app[web.1]: at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445) ~[na:na]
+2025-04-27T17:23:45.349733+00:00 app[web.1]: at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:593) ~[na:na]
+2025-04-27T17:23:45.349734+00:00 app[web.1]: at org.springframework.boot.loader.net.protocol.jar.JarUrlClassLoader.loadClass(JarUrlClassLoader.java:107) ~[taskmanagermvc-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+2025-04-27T17:23:45.349734+00:00 app[web.1]: at org.springframework.boot.loader.launch.LaunchedClassLoader.loadClass(LaunchedClassLoader.java:91) ~[taskmanagermvc-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+2025-04-27T17:23:45.349734+00:00 app[web.1]: at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[na:na]
+2025-04-27T17:23:45.349736+00:00 app[web.1]: at org.hibernate.boot.registry.classloading.internal.AggregatedClassLoader.findClass(AggregatedClassLoader.java:206) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+2025-04-27T17:23:45.349736+00:00 app[web.1]: ... 52 common frames omitted
+2025-04-27T17:23:45.349736+00:00 app[web.1]: Suppressed: java.lang.ClassNotFoundException: org.hibernate.dialect.MySQL5InnoDBDialect
+2025-04-27T17:23:45.349736+00:00 app[web.1]: at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+2025-04-27T17:23:45.349738+00:00 app[web.1]: at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+2025-04-27T17:23:45.349738+00:00 app[web.1]: at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[na:na]
+2025-04-27T17:23:45.349738+00:00 app[web.1]: at org.hibernate.boot.registry.classloading.internal.AggregatedClassLoader.findClass(AggregatedClassLoader.java:206) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+2025-04-27T17:23:45.349739+00:00 app[web.1]: ... 52 common frames omitted
+2025-04-27T17:23:45.349739+00:00 app[web.1]:
+2025-04-27T17:23:45.417922+00:00 heroku[web.1]: Process exited with status 1
+2025-04-27T17:23:45.441111+00:00 heroku[web.1]: State changed from starting to crashed
+2025-04-27T17:37:16.000000+00:00 app[api]: Build started by user gajiniahmed343@gmail.com
+2025-04-27T17:37:37.895303+00:00 app[api]: Deploy 2c9431bb by user gajiniahmed343@gmail.com
+2025-04-27T17:37:37.895303+00:00 app[api]: Release v10 created by user gajiniahmed343@gmail.com
+2025-04-27T17:37:38.184065+00:00 heroku[web.1]: State changed from crashed to starting
+2025-04-27T17:37:41.645023+00:00 heroku[web.1]: Starting process with command `java -Dserver.port=42571 $JAVA_OPTS -jar target/taskmanagermvc-0.0.1-SNAPSHOT.jar`
+2025-04-27T17:37:42.185101+00:00 app[web.1]: Create a Procfile to customize the command used to run this process: https://devcenter.heroku.com/articles/procfile
+2025-04-27T17:37:42.196380+00:00 app[web.1]: Setting JAVA_TOOL_OPTIONS defaults based on dyno size. Custom settings will override them.
+2025-04-27T17:37:42.198817+00:00 app[web.1]: Picked up JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF-8 -XX:MaxRAM=536870912 -Xmx300m -Xss512k -XX:CICompilerCount=2
+2025-04-27T17:37:43.019112+00:00 app[web.1]:
+2025-04-27T17:37:43.019141+00:00 app[web.1]: .   ____          _            __ _ _
+2025-04-27T17:37:43.019142+00:00 app[web.1]: /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+2025-04-27T17:37:43.019142+00:00 app[web.1]: ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+2025-04-27T17:37:43.019142+00:00 app[web.1]: \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+2025-04-27T17:37:43.019143+00:00 app[web.1]: '  |____| .__|_| |_|_| |_\__, | / / / /
+2025-04-27T17:37:43.019143+00:00 app[web.1]: =========|_|==============|___/=/_/_/_/
+2025-04-27T17:37:43.019143+00:00 app[web.1]:
+2025-04-27T17:37:43.021940+00:00 app[web.1]: :: Spring Boot ::                (v3.4.5)
+2025-04-27T17:37:43.021944+00:00 app[web.1]:
+2025-04-27T17:37:43.098063+00:00 app[web.1]: 2025-04-27T17:37:43.096Z  INFO 2 --- [           main] c.i.t.TaskmanagermvcApplication          : Starting TaskmanagermvcApplication v0.0.1-SNAPSHOT using Java 21.0.7 with PID 2 (/app/target/taskmanagermvc-0.0.1-SNAPSHOT.jar started by u20534 in /app)
+2025-04-27T17:37:43.098776+00:00 app[web.1]: 2025-04-27T17:37:43.098Z  INFO 2 --- [           main] c.i.t.TaskmanagermvcApplication          : No active profile set, falling back to 1 default profile: "default"
+2025-04-27T17:37:43.759409+00:00 app[web.1]: 2025-04-27T17:37:43.759Z  INFO 2 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-27T17:37:43.820242+00:00 app[web.1]: 2025-04-27T17:37:43.820Z  INFO 2 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 1 JPA repository interface.
+2025-04-27T17:37:44.000000+00:00 app[api]: Build succeeded
+2025-04-27T17:37:44.204893+00:00 app[web.1]: 2025-04-27T17:37:44.204Z  INFO 2 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 42571 (http)
+2025-04-27T17:37:44.222959+00:00 app[web.1]: 2025-04-27T17:37:44.222Z  INFO 2 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-27T17:37:44.223126+00:00 app[web.1]: 2025-04-27T17:37:44.223Z  INFO 2 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-04-27T17:37:44.249492+00:00 app[web.1]: 2025-04-27T17:37:44.249Z  INFO 2 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-27T17:37:44.250430+00:00 app[web.1]: 2025-04-27T17:37:44.250Z  INFO 2 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1112 ms
+2025-04-27T17:37:44.397655+00:00 app[web.1]: 2025-04-27T17:37:44.396Z  INFO 2 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-27T17:37:44.439008+00:00 app[web.1]: 2025-04-27T17:37:44.438Z  INFO 2 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-04-27T17:37:44.464771+00:00 app[web.1]: 2025-04-27T17:37:44.464Z  INFO 2 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-27T17:37:44.732993+00:00 app[web.1]: 2025-04-27T17:37:44.732Z  INFO 2 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-27T17:37:44.755048+00:00 app[web.1]: 2025-04-27T17:37:44.754Z  INFO 2 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-27T17:37:45.167774+00:00 app[web.1]: 2025-04-27T17:37:45.167Z  INFO 2 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5c9a4f3b
+2025-04-27T17:37:45.169276+00:00 app[web.1]: 2025-04-27T17:37:45.169Z  INFO 2 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-27T17:37:45.232224+00:00 app[web.1]: 2025-04-27T17:37:45.232Z  WARN 2 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-27T17:37:45.246053+00:00 app[web.1]: 2025-04-27T17:37:45.245Z  INFO 2 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-04-27T17:37:45.246056+00:00 app[web.1]: Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+2025-04-27T17:37:45.246056+00:00 app[web.1]: Database driver: undefined/unknown
+2025-04-27T17:37:45.246057+00:00 app[web.1]: Database version: 8.0.40
+2025-04-27T17:37:45.246057+00:00 app[web.1]: Autocommit mode: undefined/unknown
+2025-04-27T17:37:45.246058+00:00 app[web.1]: Isolation level: undefined/unknown
+2025-04-27T17:37:45.246058+00:00 app[web.1]: Minimum pool size: undefined/unknown
+2025-04-27T17:37:45.246058+00:00 app[web.1]: Maximum pool size: undefined/unknown
+2025-04-27T17:37:45.890700+00:00 app[web.1]: 2025-04-27T17:37:45.890Z  INFO 2 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-27T17:37:45.937335+00:00 app[web.1]: Hibernate: create table task_entity (id bigint not null auto_increment, description varchar(255), due_date date, priority enum ('HIGH','LOW','MEDIUM'), status enum ('COMPLETED','IN_PROGRESS','PENDING'), title varchar(255), primary key (id)) engine=InnoDB
+2025-04-27T17:37:46.043721+00:00 app[web.1]: 2025-04-27T17:37:46.043Z  INFO 2 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-27T17:37:46.345174+00:00 app[web.1]: 2025-04-27T17:37:46.343Z  WARN 2 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-27T17:37:46.715000+00:00 app[web.1]: 2025-04-27T17:37:46.714Z  INFO 2 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 42571 (http) with context path '/'
+2025-04-27T17:37:46.725459+00:00 app[web.1]: 2025-04-27T17:37:46.725Z  INFO 2 --- [           main] c.i.t.TaskmanagermvcApplication          : Started TaskmanagermvcApplication in 4.05 seconds (process running for 4.526)
+2025-04-27T17:37:47.000292+00:00 heroku[web.1]: State changed from starting to up
+
