@@ -1,63 +1,46 @@
-package com.infosys.taskmanagermvc.config;
+package com.infosys.taskmanagermvc.controller;
 
-import com.infosys.taskmanagermvc.service.CustomUserDetailsService;
+import com.infosys.taskmanagermvc.entity.User;
+import com.infosys.taskmanagermvc.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.AuthenticationProvider;
-import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
-import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+@Controller
+public class AuthController {
 
-@Configuration
-@EnableWebSecurity
-public class SecurityConfig {
     @Autowired
-    private CustomUserDetailsService customUserDetailsService;
+    private UserRepository repo;
 
-    @Bean
-    public PasswordEncoder pwdEncoder(){
-        return new BCryptPasswordEncoder();
+    @Autowired
+    private PasswordEncoder pwdEncoder;
+
+    // Display login page
+    @GetMapping("/login")
+    public String loginPage() {
+        return "login"; // returns login.html (Thymeleaf template)
     }
 
-    @Bean
-    public AuthenticationProvider authProvider(){
-        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
-        authProvider.setUserDetailsService(customUserDetailsService);
-        authProvider.setPasswordEncoder(pwdEncoder());
-        return authProvider;
+    // Display registration page
+    @GetMapping("/register")
+    public String registerPage() {
+        return "register"; // returns register.html (Thymeleaf template)
     }
 
-    @Bean
-    public AuthenticationManager authManager(AuthenticationConfiguration config) throws Exception {
-        return config.getAuthenticationManager();
-    }
+    // Handle registration submission
+    @PostMapping("/register")
+    public String registration(User user, Model model) {
+        // Encode the password before saving the user
+        String encodedPwd = pwdEncoder.encode(user.getPassword());
+        user.setPassword(encodedPwd);
 
-    @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http
-                .csrf(csrf -> csrf
-                        .ignoringRequestMatchers("/login", "/register")  // Disable CSRF for login and register
-                )
-                .authorizeHttpRequests(authorizeRequests ->
-                        authorizeRequests
-                                .requestMatchers("/", "/login", "/register").permitAll()  // Public routes
-                                .requestMatchers("/tasks/**").authenticated()  // Task routes require authentication
-                )
-                .formLogin(formLogin ->
-                        formLogin
-                                .loginPage("/login")  // Custom login page
-                                .defaultSuccessUrl("/tasks", true)  // Redirect to tasks page after successful login
-                                .permitAll()
-                )
-                .logout(logout ->
-                        logout.permitAll()
-                );
-        return http.build();
+        // Save the user to the repository
+        repo.save(user);
+
+        // Add a success message and redirect to the login page
+        model.addAttribute("success", "User registered successfully. Please log in.");
+        return "login"; // Redirect to login page after successful registration
     }
 }
