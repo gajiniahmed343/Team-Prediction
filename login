@@ -1,59 +1,32 @@
-package com.infosys.taskmanagermvc.entity;
+package com.infosys.taskmanagermvc.service;
 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
-import java.util.List;
+import com.infosys.taskmanagermvc.entity.User;
+import com.infosys.taskmanagermvc.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
-@Entity
-@Table(name = "`user`")
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+import java.util.Collections;
 
-    @Email
-    @NotBlank(message = "Email is required")
-    @Column(unique = true)
-    private String email;  // Use email instead of username
+@Service
+public class CustomUserDetailsService implements org.springframework.security.core.userdetails.UserDetailsService {
 
-    @NotBlank(message = "Password is required")
-    @Size(min = 8, message = "Password should have at least 8 characters")
-    private String password;
+    @Autowired
+    private UserRepository userRepository;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<TaskEntity> tasks;  // Assume TaskEntity has a 'user' field mapping back to User
+    @Override
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        // Find the user by email
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new UsernameNotFoundException("User with email: " + email + " not found"));
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public List<TaskEntity> getTasks() {
-        return tasks;
-    }
-
-    public void setTasks(List<TaskEntity> tasks) {
-        this.tasks = tasks;
+        // Map User entity to UserDetails object for Spring Security
+        return new org.springframework.security.core.userdetails.User(
+                user.getEmail(),
+                user.getPassword(),
+                Collections.emptyList() // Assume all users have ROLE_USER
+        );
     }
 }
