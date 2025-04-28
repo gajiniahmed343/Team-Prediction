@@ -1,1 +1,31 @@
-https://taskmanagermvc-3260deeb347b.herokuapp.com/tasks
+@Autowired
+    private UserRepository repo;
+
+    @Autowired
+    private PasswordEncoder pwdEncoder;
+
+    @Autowired
+    private AuthenticationManager authManager;
+
+    @PostMapping("/login")
+    public ResponseEntity<String> loginCheck(@RequestBody UserEntity c) {
+        UsernamePasswordAuthenticationToken token =
+                new UsernamePasswordAuthenticationToken(c.getUmail(), c.getUpwd());
+        try {
+            Authentication authenticate = authManager.authenticate(token);
+            if (authenticate.isAuthenticated()) {
+                return new ResponseEntity<String>("Welcome to Ashok IT", HttpStatus.OK);
+            }
+        } catch (Exception e) {
+            // logger
+        }
+        return new ResponseEntity<String>("Invalid Credentials", HttpStatus.UNAUTHORIZED);
+    }
+
+    @PostMapping("/register")
+    public ResponseEntity<String> registration(@RequestBody UserEntity c) {
+        String encodedPwd = pwdEncoder.encode(c.getUpwd());
+        c.setUpwd(encodedPwd);
+        repo.save(c);
+        return new ResponseEntity<String>("User Registered", HttpStatus.CREATED);
+    }
