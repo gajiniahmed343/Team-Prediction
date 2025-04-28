@@ -1,32 +1,10 @@
-package com.infosys.taskmanagermvc.service;
+package com.infosys.taskmanagermvc.repository;
 
 import com.infosys.taskmanagermvc.entity.User;
-import com.infosys.taskmanagermvc.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Service;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.Collections;
+import java.util.Optional;
 
-@Service
-public class CustomUserDetailsService implements org.springframework.security.core.userdetails.UserDetailsService {
-
-    @Autowired
-    private UserRepository userRepository;
-
-    @Override
-    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        // Find the user by email
-        User user = userRepository.findByEmail(email)
-                .orElseThrow(() -> new UsernameNotFoundException("User with email: " + email + " not found"));
-
-        // Map User entity to UserDetails object for Spring Security
-        return new org.springframework.security.core.userdetails.User(
-                user.getEmail(),
-                user.getPassword(),
-                Collections.emptyList() // Assume all users have ROLE_USER
-        );
-    }
+public interface UserRepository extends JpaRepository<User,Long> {
+    Optional<User> findByEmail(String email);
 }
